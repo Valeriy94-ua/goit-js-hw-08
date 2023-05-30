@@ -10,21 +10,18 @@ const fillInputFromLocalStorage = () => {
   if (userInfoFromLS === undefined) {
     return;
   }
-  console.log(userInfoFromLS);
 
   for (let key in userInfoFromLS) {
     inputForm.elements[key].value = userInfoFromLS[key];
     if (userInfoFromLS[key] !== '') {
       userInfo[key] = userInfoFromLS[key];
     }
-    console.log(userInfo);
   }
 };
 
 fillInputFromLocalStorage();
 
 const formOnChange = event => {
-  console.log(userInfo);
   const inputEmailEl = event.target;
   const inputEmailValue = inputEmailEl.value;
   const inputEmailName = inputEmailEl.name;
@@ -43,7 +40,6 @@ const onFormElSubmit = event => {
   if (inputEmail.value === '' || inputMessage.value === '') {
     return; // Нічого не робимо, якщо одне з полів порожнє
   }
-  console.log(inputEmail.value);
   const inputForm = event.target;
 
   inputForm.reset();
