@@ -18,7 +18,6 @@ const fillInputFromLocalStorage = () => {
     }
   }
 };
-
 fillInputFromLocalStorage();
 
 const formOnChange = event => {
@@ -34,12 +33,13 @@ const formOnChange = event => {
 
 const onFormElSubmit = event => {
   event.preventDefault();
-
   const inputEmail = document.querySelector('input');
   const inputMessage = document.querySelector('textarea');
   if (inputEmail.value === '' || inputMessage.value === '') {
     return; // Нічого не робимо, якщо одне з полів порожнє
   }
+  console.log(userInfo);
+
   const inputForm = event.target;
 
   inputForm.reset();
